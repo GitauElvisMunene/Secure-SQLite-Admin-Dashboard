@@ -1,12 +1,19 @@
 const sqlite3 = require('sqlite3').verbose()
+const path = require('path')
 
-const db = new sqlite3.Database("../mock.db")
+const db = new sqlite3.Database(path.join(__dirname, '../mock.db'))
 
 
 class User {
     static create(userData, callback){
-        const sql = `INSERT INTO Users (username, email, password, id) VALUE(?,?,?,?)`;
-        db.run(sql,[userData.username, userData.email, userData.password, userData.id], callback);
+        const sql = `INSERT INTO Users (username, email, password) VALUES(?,?,?)`;
+        db.run(sql,[userData.username, userData.email, userData.password], function(err) {
+            if (err) {
+                console.error('Database error:', err);
+                return callback(err);
+            }
+            callback(null);
+        });
     }
 
    //Find User by userName

@@ -1,0 +1,70 @@
+// const sqlite3 = require("sqlite3")
+// const db = new sqlite3.Database("./mock.db", sqlite3.OPEN_READANDWRITE, 
+//     (err)=>{
+//     if (err) return  console.log(err.message);
+    
+//     console.log("Connection successful")
+
+// });
+
+
+
+//TABLE OPERATIONS
+
+
+//Create a user table 
+
+// db.run(
+//     `CREATE TABLE Users (username, email, password, id)`
+// );
+
+
+//Insert Value
+
+// const sql = `INSERT INTO Users(username, email, password, id)
+//             VALUES(?,?,?,?);`
+
+// db.run(
+//     sql,
+//     ["ElvisKing", "elvisgitau10@gmail.com", "1234",1],
+//     (err) => {
+//         if (err) return console.log(err.message)
+
+//         console.log("User created")
+//     }
+
+    
+// )
+
+
+//Insert  column primary key
+
+// const sql = 'ALTER users ADD id'
+
+
+//view data
+
+//const sql = `SELECT * FROM NewuUsers`
+
+//db.run(
+//    sql, (err)=>{
+//        if (err) return console.log(err.message)
+//        
+//        console.log("Data Retrieved")
+//    }
+//)
+
+
+//Delete Everything from the database
+
+// const sql = `DROP TABLE  Users;`
+
+// db.run(
+//     sql,
+//     (err)=> {
+//         if (err) return console.log(err.message)
+
+//         console.log("Table deleted")
+//     }
+// )
+

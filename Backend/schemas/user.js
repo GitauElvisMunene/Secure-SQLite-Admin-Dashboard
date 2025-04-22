@@ -1,15 +1,12 @@
-const Joi = require('Joi');
-
-
-//Schema for user registration/login
+const Joi = require('joi');
 
 const userSchema = Joi.object({
-    username: Joi.string().min(2).max(30).required(),
-    email: Joi.string().email().required(),
-    password: Joi.string().min(4).required(),
-    id: Joi.number().optional()
-})
+  username: Joi.string().min(3).max(30).required(),
+  email: Joi.string().email().required(),
+  password: Joi.string().min(4).required(),
+  id: Joi.number().optional()
+});
 
 
-module.exports = userSchema;
 
+module.exports = userSchema;  // Export the schema, not Joi itself
